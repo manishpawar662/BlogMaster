@@ -6,7 +6,9 @@
         <input class="form-control" name="name" placeholder="Name">
         <input class="form-control" name="username" placeholder="Username">
         <input class="form-control" name="email" placeholder="eg johnwick@gmail.com" type="email">
-        <input class="form-control" type="password" name="password" id="password"placeholder="Type your password here"> 
+        <input class="form-control" type="password" name="password" id="password"placeholder="Type your password here" required
+        pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}"
+        title="Password must be at least 8 characters, contain one uppercase, one lowercase, one digit, and one special character (@#$%^&+=)."> 
         <label for=""> 
             Strength of password 
         </label> 
