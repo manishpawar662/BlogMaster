@@ -1,0 +1,51 @@
+<h2 style="color: antiquewhite">Posts</h2>
+{% if posts %} {% for post in posts %}
+
+<div class="post my-3">
+  <bold><h4 style="color: rgb(0, 0, 0); background-color: rgb(255, 0, 217)">
+    {{post['username']}}</bold>
+  </h4>
+  <p style="color: rgb(0, 0, 0)">{{post['content']}}</p>
+  {% if post.imdata %}
+  <img class="postsimg" src="{{ url_for('static',  filename='postimages/' + post.imdata) }}">
+    <p class="text-success">Value of post.imdata:{{post.imdata}}</p>
+  {% endif %}
+  <button
+    class="btn btn-primary"
+    onclick="showcomments(`{{post['username']}}`,`{{post['sno']}}`)"
+  >
+    comments
+  </button>
+  {% if username == post['username'] %}
+  <a href="/deletepost/{{ post['sno'] }}"><button class="btn btn-danger">Delete Post</button></a>
+  {% endif %}
+  <div id="{{post['sno']}}" class="commentsection">
+    <h1 id="comment_username"style="color: rgb(255, 255, 255); background-color: rgb(86, 255, 8)">
+    </h1>
+    {% if comments %}
+      {% for comment in comments  %}
+        {% if post['sno'] == comment['post_sno'] %}
+        <h5 style="color: rgba(0, 38, 255, 0.507)">{{comment.comment_username}}</h5>            
+        <p  style="color: rgba(0, 0, 0, 0.644)">{{comment.comment}}</p>    
+        {% if username == comment['comment_username'] %}
+          <a id="deletecommentbtn" href="/deletecomment/{{ comment['sno'] }}"><button class="btn-sm btn btn-outline-danger">Delete comment</button></a>
+        {% endif %}          
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if username  %}
+    <form class="sticky-form" method="POST" action="{{ url_for('addcomment', current_user=username, post_username=post['username'], post_sno=post['sno']) }}">
+      <input type="text" name="commentcontent" class="input-secondary" placeholder="Enter your Comment...">
+      <button type="submit" class="post-button btn btn-primary">Post</button>
+  </form>
+  </div>  
+    {% endif %}
+    
+</div>
+
+
+{% endfor %} {% endif %} {% else %}
+<h2 style="color: rgb(0, 0, 0)">
+  You're not logged in <a href="/login">click here</a> to login
+</h2>
+{% endif %}

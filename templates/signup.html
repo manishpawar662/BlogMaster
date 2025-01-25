@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block body %}
+
+    <div class="group d-flex vh-100 justify-content-center align-items-center "> 
+    <form autocomplete="off" action="/signup" class="w-25 p-4 text-center mytext"  method="POST" action="validate_login.php">
+        <h2 class="text-white">SignUp</h2>
+        <input class="form-control" name="name" placeholder="Name">
+        <input class="form-control" name="username" placeholder="Username">
+        <input class="form-control" name="email" placeholder="eg johnwick@gmail.com" type="email">
+        <input class="form-control" type="password" name="password" id="password"placeholder="Type your password here"> 
+        <label for=""> 
+            Strength of password 
+        </label> 
+        <div class="power-container"> 
+            <div id="power-point"></div> 
+        </div> 
+        <input class="btn btn-success" type="submit" value="Submit">
+        <p style="color:azure">Already a member? <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="/login">click here</a> to Login</p>
+    </form>
+</div> 
+
+
+{% endblock body %}

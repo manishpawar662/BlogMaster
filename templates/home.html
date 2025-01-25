@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block body %} {% if username %}
+<h3 style="color: lawngreen">Hi {{username}}! You're logged in</h3>
+<br />
+<h3><a href="/logout">Logout</a></h3>
+<div class="d-flex vh-100 justify-content-center align-items-center">
+
+    <form
+      id="form_post"
+      action="/postcontent"
+      autocomplete="off"
+      class="w-25 p-4 text-center"
+      method="POST"
+      action="validate_login.php"
+      enctype="multipart/form-data"
+    >
+      <input
+        id="input_post"
+        class="form-control"
+        name="content"
+        placeholder="Post content"
+      />
+      <input required class="form-control" name="imdata" type="file">
+
+      <input class="btn btn-warning" type="submit" value="Post" />
+    </form>
+  </div>
+  {% else %}
+<h2 style="color: rgb(0, 0, 0)">
+  You're not logged in <a href="/login">click here</a> to login
+</h2>
+{% endif %} {% endblock body %}

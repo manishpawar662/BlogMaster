@@ -1,0 +1,18 @@
+<!-- <div class="d-flex vh-100 justify-content-center align-items-center ">  -->
+    <!-- <form autocomplete="off" class="w-25 p-4 text-center mytext"  method="POST" action="validate_login.php">
+        <h2 class="text-white">Signup</h2>
+    <input class="form-control" name="name" placeholder="Name">
+    <input class="form-control" name="uname" placeholder="Username">
+    <input class="form-control" name="email" placeholder="eg johnwick@gmail.com" type="email">
+    <input class="form-control" id="password" name="upassword" placeholder="password" type="password">
+    <label style="color:antiquewhite" for=""> 
+        Strength of password 
+    </label> 
+  <div class="power-container"> 
+      <div id="power-point"></div> 
+  </div> 
+    <input class="btn btn-success" type="submit" value="Submit">
+    <p style="color:azure">Already a member? <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="/signup">click here</a> to Login</p>
+</form> -->
+
+<!-- </div> -->
