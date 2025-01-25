@@ -13,7 +13,6 @@ Thumbs.db
 
 # Ignore logs
 *.log
-
-*.txt
+rough.txt
 
 app1.py
