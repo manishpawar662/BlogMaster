@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block body %}
+
+    <div class="group d-flex vh-100 justify-content-center align-items-center "> 
+    <form autocomplete="off" action="/signup" class="w-25 p-4 text-center mytext"  method="POST" action="validate_login.php">
+        <h2 class="text-white">SignUp</h2>
+        <input class="form-control" name="name" placeholder="Name" pattern="^[a-zA-Z\s]{2,30}$" required>
+        <input class="form-control" name="username" placeholder="Username" pattern="^[a-zA-Z0-9_]{3,15}$" required>
+        <input class="form-control" name="email" placeholder="eg johnwick@gmail.com" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+        <input class="form-control" type="password" name="password" id="password"placeholder="Type your password here" required
+        pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}"
+        title="Password must be at least 8 characters, contain one uppercase, one lowercase, one digit, and one special character (@#$%^&+=)."> 
+        <label for=""> 
+            Strength of password 
+        </label> 
+        <div class="power-container"> 
+            <div id="power-point"></div> 
+        </div> 
+        <input class="btn btn-success" type="submit" value="Submit">
+        <p style="color:azure">Already a member? <a style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="/login">click here</a> to Login</p>
+    </form>
+</div> 
+
+
+{% endblock body %}

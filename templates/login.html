@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block body %}
+<div class="d-flex vh-100 justify-content-center align-items-center ">    
+    <form action="/login" autocomplete="off" class="w-25 p-4 text-center mytext"  method="POST" action="validate_login.php">
+        <h2 class="text-white">Login</h2>
+        {% if error %}
+    <p style="color:rgb(169, 15, 15)">{{error}}</p>
+   {% endif %}
+    <input class="form-control" name="username" placeholder="username">
+    <input class="form-control" name="password" placeholder="password" type="password">
+    <input class="btn btn-success" type="submit" value="Submit">
+    <p style="color:azure">Not a member? <a href="/signup">click here</a> to sign Up</p>
+</form>
+</div>
+{% endblock body %}
